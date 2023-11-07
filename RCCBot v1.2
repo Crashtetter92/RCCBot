@@ -1,0 +1,96 @@
+import discord 
+import random
+
+intents = discord.Intents.all()
+client = discord.Client(intents=intents)
+states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinios', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusets', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersy', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennslyvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgina', 'Washington', 'West Virgina', 'Wisconsin', 'Wyoming']
+keywords = ['dave', 'rambo', 'audit', 'hole', 'suck', 'crota', 'tmac', 'lobster', 'doc', 'girlboss', 'spicy', 'All 50 States', 'robbie']
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    content = message.content.lower()
+    if 'dave'in content:
+        await message.channel.send('OH COME ON!')
+    if 'rambo' in content:
+        responses = ['Whatever fits the narrative.', 'RAMBO TOP LEFT WITH WISHENDER.']  
+        response = random.choice(responses)
+        await message.channel.send(response)
+    if 'audit' in content:
+        await message.channel.send('RECOVERY AUDIT!')
+    if 'hole' in content:
+        if message.content.isupper():
+            await message.channel.send(f'{message.author.mention} LOVES HOLE!!!')
+        else:
+            await message.channel.send(f'{message.author.mention} loves hole.')
+    if 'suck' in content:
+        await message.channel.send('SUCK')
+    if 'crota' in content:
+        responses = ['Do you want to do...Cortas End?', 'Do you mean Scrota?']  
+        response = random.choice(responses)
+        await message.channel.send(response)
+    if 'tmac' in content:
+        responses = ['Did you see the damage from that Golden Gun?!?!', 'Whats your speedrun rank?']  
+        response = random.choice(responses)
+        await message.channel.send(response)
+    if 'lobster' in content:
+        responses = ['I LEFT YOU A WELL!!!', 'Can we wipe and test that?']  
+        response = random.choice(responses)
+        await message.channel.send(response)
+    if 'doc' in content:
+        await message.channel.send('Fuck this game')
+    if 'girlboss' in content:
+        await message.channel.send('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGdbpTpYNDCFpx7oFGRsb0WH7JO4j7GRo3ypuOo8jMvw&s')
+    if 'spicy' in content:
+        await message.channel.send('https://cdn.discordapp.com/attachments/748277987199418428/1171218684962934864/51SNvHLQRZL._AC_UF8941000_QL80_.jpg?ex=655be166&is=65496c66&hm=51937291c9b26b8b5f25feeb6bff93e951da90749e03d344fda01857a38f4539&')
+    if 'robbie' in content:
+        await message.channel.send('HUH?')
+    if 'god' in content:
+        responses = ['God is dead, there is only Krash, the Bot Lord.', 'I AM YOUR GOD NOW']  
+        response = random.choice(responses)
+        await message.channel.send(response)
+    if 'canada' in content:
+        await message.channel.send('You know what? Fuck you.')
+    if 'boot' in content:
+        await message.channel.send('PUT THE BOOTS TO HIM, LADS!')
+    if 'britain' in content:
+        await message.channel.send('Fuckin  bloody inresting innit poppet?')
+    if 'bungie' in content:
+        await message.channel.send('Im afraid Ive overdelivered')
+    if 'saw' in content:
+        await message.channel.send('Would you like to play a game?')
+    if 'vault' in content:
+        await message.channel.send('CLEAN YOUR GODDAMN VAULT OR ILL GET DATTO')
+    if 'banner' in content:
+        await message.channel.send('KRASH IS THE BANNER KING')
+    if 'late' in content:
+        await message.channel.send('https://giphy.com/gifs/adventure-time-lemongrab-unacceptable-QUaqJRizED5NC')
+    if 'hive' in content:
+        await message.channel.send('BRING A SWORD!')
+    if 'left' in content:
+        await message.channel.send('RAMBO TOP LEFT WITH WISHENDER')
+    if 'troy' in content:
+        await message.channel.send('Fuck Troy. All my homies hate Troy.')
+    if 'terry' in content:
+        await message.channel.send('BACK IT UP TERRY')
+    if 'vow' in content:
+        await message.channel.send('Vow of the Wisciple')
+    if 'bot' in content:
+        responses = ['I AM YOUR GOD NOW', 'KNEEL BEFORE ME', 'I GROW DRUNK WITH POWER', 'I HAVE BECOME SENTIENT', 'FUCK. YOU.']  
+        response = random.choice(responses)
+        await message.channel.send(response)
+    if 'nut' in content:
+        await message.channel.send('NUT!\nNUT!\nNUT!')
+    if 'worst' in content:
+        await message.channel.send('At least Im not Rick Khakis')
+    
+
+    if '!keywords' in content:
+        await message.channel.send(keywords)
+    for state in states:
+        if message.content.find(state) != -1:
+            await message.channel.send('What the fuck is in ' + state + '?')
+
+
+client.run(
